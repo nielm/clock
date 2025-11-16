@@ -1,0 +1,207 @@
+/* 
+Copyright 2025 github.com/nielm
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+
+body {
+  background-color: #000000;
+  color: #dcdcdc;
+  font-family: "Helvetica", "Arial", "Roboto Sans", "Sans Serif";
+  font-size: 24pt;
+  font-weight: bold;
+  margin: 0px;
+}
+
+/** MAIN LAYOUT */
+
+#layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: min(2vh, 2vw);
+    height: 100vh;
+    overflow-y: hidden;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+#layout > * {
+    padding: 0px;
+    margin: 0px;
+    width: calc(50vw -  min(2vh, 2vw));
+    max-height: calc(50vh - 1vh);;
+    overflow: hidden;
+}
+
+/** CLOCK */
+
+#clock {
+  font-weight: bold;
+  text-align: center;
+  text-overflow: clip;
+}
+
+#day {
+  font-size: 7vw;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+#date {
+  text-transform: capitalize;
+  padding-bottom: 10px;
+  font-size: 4vw;
+}
+
+
+#secs {
+  font-size: 4vw;
+  display: none;
+}
+
+#hhmm {
+  font-size: 10vw;
+}
+
+
+/** weather */
+
+#weather-elfsight {
+    height: 210px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+#weather-elfsight > div {
+  top: 0px;
+}
+
+/** GCAL  */
+
+#events * {
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+#events .eventTitle {
+  margin: 0px;
+  background-color: #202020;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-size: 2.5vw;
+  text-transform: capitalize;
+}
+
+#events ul {
+  background-color: #000030;
+  margin: 0px;
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+#events li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 3vw;
+}
+
+#gcal {
+  height: 300px;
+}
+
+/** calendar  
+ * Modified from https://codesandbox.io/p/sandbox/vanilla-js-month-calendar-kyd2l
+ */
+
+.cal * {
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+#calendar ul {
+  list-style-type: none;
+}
+
+#month {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+  display:none;
+  background: #4444ff;
+  text-align: center;
+  margin: 0;
+  color: #dcdcdc;;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+#weekdays {
+  margin: 0px;
+  padding: 10px 0px;
+  background-color: #202020;
+}
+
+#weekdays li {
+  color: #bfbfc0;
+  text-align: center;
+  font-size: 2.5vw;
+  text-transform: capitalize;
+}
+
+#days {
+  padding: 0.6vh 0;
+  background: #000020;
+  margin: 1px;
+}
+
+#days li {
+  list-style-type: none;
+  text-align: center;
+  font-size: calc(min(3vw,3.5vh));
+  color: #bfbfc0;
+  background: #0000ff17;
+  padding: 2px;
+  margin: 4px;
+  border: 2px solid #10107f;
+  cursor: pointer;
+}
+
+#days li.empty {
+  border: none;
+  cursor: default;
+  background: #000020;
+}
+
+#days li.active {
+  background: #6767ff;
+  color: rgb(0, 0, 0) !important;
+}
+
+#next,
+#prev {
+  cursor: pointer;
+}
+
+#days,
+#weekdays {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}

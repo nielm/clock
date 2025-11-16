@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="clock.css" />
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="datetime.js"></script>
+    <script src="localenames.js"></script>
+    <script src="gcal.js"></script>
+  </head>
+
+  <body>
+    <div id="layout">
+      <div class="widget" id="clock">
+        <div id="day"></div>
+        <div id="date"></div>
+        <div id="time"><span id="hhmm"></span> <span id="secs"></span></div>
+      </div>
+      <div class="widget" id="events">
+        <div class="eventTitle" id="todayTitle">Hoy</div>
+        <ul id="calendar-today">
+          <li>&nbsp;</li>
+        </ul>      
+        <div class="eventTitle" id="tomorrowTitle">Mañana</div>
+        <ul id="calendar-tomorrow">
+            <li>&nbsp;</li>
+        </ul>
+      </div>
+      <div class="widget" id="cal">
+        <!-- from https://codesandbox.io/p/sandbox/vanilla-js-month-calendar-kyd2l?file=%2Findex.html -->
+        <div id="calendar">
+          <div id="month"></div>
+
+          <ul id="weekdays"></ul>
+
+          <ul id="days"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="calendar.js"></script>
+    <script src="clock.js"></script>
+  </body>
+</html>
