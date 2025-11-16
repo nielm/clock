@@ -36,17 +36,43 @@ async function midnightRefresh() {
 
 // Force a weather Refresh.
 function removeReaddWeather() {
-  const weatherClass = "elfsight-app-201230c4-550c-430e-9863-b0d53a23b1c0";
-  [...document.getElementsByClassName(weatherClass)].forEach((element) => {
-    console.log("removing %o", element);
-    element.parentElement.removeChild(element);
-  });
-  const weather = document.createElement("div");
-  weather.id = "weather-elfsight";
-  weather.classList.add("elfsight-app-201230c4-550c-430e-9863-b0d53a23b1c0");
-  weather.classList.add("widget");
-  const layout = document.getElementById("layout");
-  layout.appendChild(weather);
+  // const weatherClass = "weather-widget";
+  // [...document.getElementsByClassName(weatherClass)].forEach((element) => {
+  //   console.log("removing %o", element);
+  //   element.parentElement.removeChild(element);
+  // });
+  // const weather = document.createElement("div");
+  // weather.classList.add("widget");
+  // weather.classList.add("weather-widget");
+
+  /*
+    // Elfsight weather
+    weather.id = "weather-elfsight";
+    weather.classList.add("elfsight-app-201230c4-550c-430e-9863-b0d53a23b1c0");
+  */
+
+  // // WeatherWidgets weather
+  // weather.innerHTML=`
+  //   <a class="weatherwidget-io" 
+  //      href="https://forecast7.com/es/50d834d37/ixelles/"
+  //      data-label_1="IXELLES"
+  //      data-font="Roboto"
+  //      data-days="3"
+  //      data-theme="original"
+  //      data-basecolor="#000030">
+  //      IXELLES
+  //   </a>
+  // `
+  // !(function (d, s, id) {
+  //   var js,
+  //     fjs = d.getElementsByTagName(s)[0];
+  //   if (!d.getElementById(id)) {
+  //     js = d.createElement(s);
+  //     js.id = id;
+  //     js.src = "https://weatherwidget.io/js/widget.min.js";
+  //     fjs.parentNode.insertBefore(js, fjs);
+  //   }
+  // })(document, "script", "weatherwidget-io-js");
 }
 
 function startUp() {

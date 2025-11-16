@@ -89,6 +89,10 @@ body {
   top: 0px;
 }
 
+.weather-widget .weatherwidget-io .locationName
+{
+  display: none !important;
+}
 /** GCAL  */
 
 #events * {

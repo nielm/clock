@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="clock.css" />
-    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <!--<script src="https://elfsightcdn.com/platform.js" async></script>-->
     <script src="https://apis.google.com/js/api.js"></script>
     <script src="datetime.js"></script>
     <script src="localenames.js"></script>
@@ -21,10 +21,10 @@
         <div class="eventTitle" id="todayTitle">Hoy</div>
         <ul id="calendar-today">
           <li>&nbsp;</li>
-        </ul>      
+        </ul>
         <div class="eventTitle" id="tomorrowTitle">Mañana</div>
         <ul id="calendar-tomorrow">
-            <li>&nbsp;</li>
+          <li>&nbsp;</li>
         </ul>
       </div>
       <div class="widget" id="cal">
@@ -37,7 +37,27 @@
           <ul id="days"></ul>
         </div>
       </div>
+    <div
+      class="widget"
+      class="weather-widget"
+      id="ww_58ce876d0c548"
+      v="1.3"
+      loc="auto"
+      a='{"t":"responsive","lang":"es","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_tof":"3","cl_odd":"#0000000a","el_nme":3}'
+    >
+      Más previsiones:
+      <a
+        href="https://tiempolargo.com/madrid_tiempo_25_dias/"
+        id="ww_58ce876d0c548_u"
+        target="_blank"
+        >Tiempo en 25 días</a
+      >
     </div>
+    </div>
+    <script
+      async
+      src="https://app3.weatherwidget.org/js/?id=ww_58ce876d0c548"
+    ></script>
     <script src="calendar.js"></script>
     <script src="clock.js"></script>
   </body>
