@@ -31,7 +31,7 @@ function liveDateTime() {
   document.getElementById("day").textContent = `${parts.weekday}`;
   document.getElementById("date").textContent = `${parts.day} ${parts.month}`;
 
-  const formatted_time = `${prefixZero(parts.hour)}:${prefixZero(
+  const formatted_time = `${(parts.hour)}:${prefixZero(
     parts.minute
   )} ${parts.dayPeriod.replaceAll(/[.]*\s*/g,"")}`;
 
