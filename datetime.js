@@ -15,7 +15,7 @@
 const dateFormat = new Intl.DateTimeFormat("es-es", {
   dateStyle: "full",
   timeStyle: "long",
-  hour12: false,
+  hour12: true,
 });
 function prefixZero(n) {
   if (!n instanceof String) {
@@ -30,11 +30,10 @@ function liveDateTime() {
 
   document.getElementById("day").textContent = `${parts.weekday}`;
   document.getElementById("date").textContent = `${parts.day} ${parts.month}`;
-  partsArray.forEach((v) => (parts[v.type] = v.value));
 
   const formatted_time = `${prefixZero(parts.hour)}:${prefixZero(
     parts.minute
-  )} ${parts.dayPeriod}`;
+  )} ${parts.dayPeriod.replaceAll(/[.]*\s*/g,"")}`;
 
   document.getElementById("hhmm").textContent = formatted_time;
   document.getElementById("secs").textContent = prefixZero(parts.second);
