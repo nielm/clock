@@ -34,7 +34,7 @@ function liveDateTime() {
 
   const formatted_time = `${prefixZero(parts.hour)}:${prefixZero(
     parts.minute
-  )}`;
+  )} ${dayPeriod}`;
 
   document.getElementById("hhmm").textContent = formatted_time;
   document.getElementById("secs").textContent = prefixZero(parts.second);
