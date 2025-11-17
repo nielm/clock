@@ -89,9 +89,10 @@ body {
   top: 0px;
 }
 
+/** https://weatherwidget.org/ */
 
 #ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col1 {
-    padding: 5px !important;
+    padding: 10px !important;
     height: 10vh;
 }
 
@@ -112,14 +113,65 @@ body {
 #ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 .day-forecast .temp {
   font-size: 4vh;
   text-align: center;
+  text-wrap: nowrap;
+}
+
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 .day-forecast .temp div {
+  display: inline;
+  padding: 0px 5px;
+}
+
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 .day-forecast .temp .day:before {
+  content: "↑";
+}
+
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 .day-forecast .temp .night:before {
+  content: "↓";
+}
+
+
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 .day-forecast .svg-wrapper {
+  text-align: center;
 }
 
 #ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 .day-forecast svg {
-  height: 6vh;
-  width: 6vw;
+  height: 7vh;
+  width: 7vw;
 }
 
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 div.day-forecast:nth-child(3 of .day-forecast) {
+  display: none !important;
+}
 
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 div.day-forecast:nth-child(1 of .day-forecast) .date {
+  visibility: hidden;
+  position: relative;
+  width: stretch;
+}
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 div.day-forecast:nth-child(1 of .day-forecast) .date:after {
+  content: "Hoy";
+  visibility: visible;
+  display: block;
+  position: absolute;
+  top: 0px;
+  text-align: center;
+  width: stretch;
+}
+
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 div.day-forecast:nth-child(2 of .day-forecast) .date {
+  visibility: hidden;
+  position: relative;
+  width: stretch;
+}
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 div.day-forecast:nth-child(2 of .day-forecast) .date:after {
+  content: "Mañana";
+  visibility: visible;
+  display: block;
+  position: absolute;
+  top: 0px;
+  text-align: center;
+  width: stretch;
+}
 
 /** GCAL  */
 

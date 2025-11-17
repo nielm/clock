@@ -74,10 +74,11 @@ function removeReaddWeather() {
   //   }
   // })(document, "script", "weatherwidget-io-js");
 
+  // https://weatherwidget.org/
   weather.setAttribute("id","ww_58ce876d0c548");
   weather.setAttribute("v","1.3");
   weather.setAttribute("loc","auto");
-
+  
   const params = {
     t: "responsive",
     lang: "es",
@@ -125,7 +126,6 @@ function startUp() {
   midnightRefresh();
   liveDateTime();
   removeReaddWeather();
-  setInterval(removeReaddWeather, 3600000 /* 1hr */);
   if (globalThis.FIXED_DATE) {
     [...document.getElementsByClassName("widget")].forEach(
       (e) => (e.style.border = "1px solid white")
