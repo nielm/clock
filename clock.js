@@ -36,14 +36,14 @@ async function midnightRefresh() {
 
 // Force a weather Refresh.
 function removeReaddWeather() {
-  // const weatherClass = "weather-widget";
-  // [...document.getElementsByClassName(weatherClass)].forEach((element) => {
-  //   console.log("removing %o", element);
-  //   element.parentElement.removeChild(element);
-  // });
-  // const weather = document.createElement("div");
-  // weather.classList.add("widget");
-  // weather.classList.add("weather-widget");
+  const weatherClass = "weather-widget";
+  [...document.getElementsByClassName(weatherClass)].forEach((element) => {
+    console.log("removing %o", element);
+    element.parentElement.removeChild(element);
+  });
+  const weather = document.createElement("div");
+  weather.classList.add("widget");
+  weather.classList.add("weather-widget");
 
   /*
     // Elfsight weather
@@ -73,6 +73,44 @@ function removeReaddWeather() {
   //     fjs.parentNode.insertBefore(js, fjs);
   //   }
   // })(document, "script", "weatherwidget-io-js");
+
+  weather.setAttribute("id","ww_58ce876d0c548");
+  weather.setAttribute("v","1.3");
+  weather.setAttribute("loc","auto");
+
+  const params = {
+    t: "responsive",
+    lang: "es",
+    sl_lpl: 1,
+    ids: [],
+    font: "Arial",
+    sl_ics: "one",
+    sl_sot: "celsius",
+    cl_bkg: "image",
+    cl_font: "#FFFFFF",
+    cl_cloud: "#FFFFFF",
+    cl_persp: "#81D4FA",
+    cl_sun: "#FFC107",
+    cl_moon: "#FFC107",
+    cl_thund: "#FF5722",
+    sl_tof: "3",
+    cl_odd: "#0000000a",
+    el_nme: 3,
+  };
+  weather.setAttribute("a",JSON.stringify(params))
+  weather.style.fontSize="0.1px";
+  weather.innerHTML =`
+      Más previsiones:
+      <a
+        href="https://tiempolargo.com/madrid_tiempo_25_dias/"
+        id="ww_58ce876d0c548_u"
+        target="_blank"
+        >Tiempo en 25 días</a
+      >
+  `;
+  const layout = document.getElementById("layout");
+  layout.appendChild(weather);
+  setTimeout(() => updateWidget('ww_58ce876d0c548', 0),100);
 }
 
 function startUp() {

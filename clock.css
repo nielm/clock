@@ -89,10 +89,38 @@ body {
   top: 0px;
 }
 
-.weather-widget .weatherwidget-io .locationName
-{
-  display: none !important;
+
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col1 {
+    padding: 5px !important;
+    height: 10vh;
 }
+
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col1 svg {
+  height: 20vh;
+  width:  15vw;
+}
+
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col1 .current-temp {
+    font-size: 6vh;
+}
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 .day-forecast {
+  border: 2px solid #000030;
+  margin: 2px
+}
+
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 .day-forecast .date, 
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 .day-forecast .temp {
+  font-size: 4vh;
+  text-align: center;
+}
+
+#ww_58ce876d0c548 .ww-box[max-width~="768px"]  .ww_col2 .day-forecast svg {
+  height: 6vh;
+  width: 6vw;
+}
+
+
+
 /** GCAL  */
 
 #events * {
