@@ -106,7 +106,11 @@ async function refreshGcal() {
       const endTime = parseIsoDate(e.end.date);
       return startTime < tomorrowMillis && endTime > todayMillis;
     }
-    return new Date(e.start.dateTime).getTime() < tomorrowMillis;
+    // Event has start/end time...
+    const eventStartMillis = new Date(e.start.dateTime).getTime();
+    // get end, defaultting to start +1hr
+    const eventEndMillis = e.end?.dateTime ? new Date(e.end.dateTime).getTime() : eventStartMillis+3600000;
+    return  eventStartMillis < tomorrowMillis && eventEndMillis > today.getTime();
   });
   const tomorrowEvents = allEvents.filter((e) => {
     if (e.start.date) {
