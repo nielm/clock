@@ -112,6 +112,20 @@ function removeReaddWeather() {
   const layout = document.getElementById("layout");
   layout.appendChild(weather);
   setTimeout(() => updateWidget('ww_58ce876d0c548', 0),100);
+  setTimeout(() => updateWeatherDays('ww_58ce876d0c548'),500);
+}
+
+function updateWeatherDays(id) {
+  if(document.getElementById(id)) {
+    const days = [...document.querySelectorAll(`#${id} .ww-box div.day-forecast`)];
+    if( days.length ===3  ) {
+      days[2].parentElement.removeChild(days[2]);
+      days[0].querySelector(".date").textContent="Hoy";
+      days[1].querySelector(".date").textContent="Mañana";
+    } else {
+      setTimeout(() => updateWeatherDays('ww_58ce876d0c548'),500);
+    }
+  }
 }
 
 function startUp() {
